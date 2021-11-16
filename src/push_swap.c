@@ -6,36 +6,42 @@
 /*   By: yoel <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 02:09:04 by yoel              #+#    #+#             */
-/*   Updated: 2021/11/15 17:57:43 by yoel             ###   ########.fr       */
+/*   Updated: 2021/11/16 10:32:37 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stack.h"
+#include "push_swap.h"
 #include <stdlib.h>
 #include <stdio.h>
 
-void	fill_stack(t_stack *stack, char *str[], int size);
+void print_stack(t_stack *a)
+{
+	int	i;
+
+	i = 0;
+	while (i < a->size)
+		printf("%i\n", a->array[i++]);
+}
 
 int main(int ac, char **av)
 {
-	t_stack	*stack[2];
-	char	**str;
-	int		i;
+	t_stack_list	*stack;
+	char			**str;
+	int				i;
 
 	i = 0;
-	stack[0] = malloc(sizeof(t_stack));
-	stack[1] = malloc(sizeof(t_stack));
-	if (ac > 2)
-		fill_stack(stack[0], av + 1, ac - 1);
-	else if (ac == 2)
+	if (ac >= 2)
 	{
-		str = ft_split(av[1], ' ');
-		while (str[i])
-			i++;
-		fill_stack(stack[0], str, i);
+		if (ac > 2)
+			stack = init_stack(av + 1, ac - 1);
+		else
+		{
+			str = ft_split(av[1], ' ');
+			while (str[i])
+				i++;
+			stack = init_stack(str, i);
+		}
+		print_stack(stack->a);
 	}
-	i = 0;
-	while (i < stack[0]->size)
-		printf("%i\n", stack[0]->array[i++]);
 }

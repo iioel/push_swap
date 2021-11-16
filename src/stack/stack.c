@@ -6,25 +6,36 @@
 /*   By: yoel <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:26:15 by yoel              #+#    #+#             */
-/*   Updated: 2021/11/15 18:14:58 by yoel             ###   ########.fr       */
+/*   Updated: 2021/11/16 10:32:02 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 #include <stdlib.h>
 
-void	fill_stack(t_stack *stack, char *str[], int size)
+static void	str2array(int array[], char *str[], int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	stack->array = malloc(size * sizeof(int));
 	while (i < size)
 	{
-		stack->array[i] = ft_atoi(str[i]);
+		array[i] = ft_atoi(str[i]);
 		i++;
 	}
-	stack->size = size;
 }
 
+t_stack_list *init_stack(char *str[], int size)
+{
+	t_stack_list	*s;
 
+	s = ft_calloc(1, sizeof(t_stack_list));
+	s->a = ft_calloc(1, sizeof(t_stack));
+	s->b = ft_calloc(1, sizeof(t_stack));
+	s->a->array = ft_calloc(1, sizeof(int));
+	s->b->array = ft_calloc(1, sizeof(int));
+	s->a->size = size;
+	s->b->size = size;
+	str2array(s->a->array, str, size);
+	return (s);
+}
