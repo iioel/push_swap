@@ -6,7 +6,7 @@
 /*   By: yoel <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 02:09:04 by yoel              #+#    #+#             */
-/*   Updated: 2021/11/16 10:32:37 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/16 18:06:59 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void print_stack(t_stack *a)
 
 	i = 0;
 	while (i < a->size)
-		printf("%i\n", a->array[i++]);
+		printf("%i ", a->array[i++]);
+	printf("\n");
 }
 
 int main(int ac, char **av)
@@ -42,6 +43,7 @@ int main(int ac, char **av)
 				i++;
 			stack = init_stack(str, i);
 		}
-		print_stack(stack->a);
+		sort(stack);
+		//print_stack(stack->a);
 	}
 }

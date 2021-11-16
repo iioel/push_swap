@@ -1,47 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_rev.c                                       :+:      :+:    :+:   */
+/*   bubble.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 09:58:30 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/16 14:36:00 by ycornamu         ###   ########.fr       */
+/*   Created: 2021/11/16 14:04:58 by ycornamu          #+#    #+#             */
+/*   Updated: 2021/11/16 16:19:15 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "stack.h"
 
-static void	rotate_rev(t_stack *array)
+void	bubble_sort(t_stack_list *s)
 {
 	int	i;
-	int	tmp;
 
-	i = array->size - 1;
-	tmp = array->array[array->size - 1];
-	while (i > 0)
+	i = 0;
+	while (! is_sorted(s->a))
 	{
-		array->array[i] = array->array[i - 1];
-		i--;
+		i = 0;
+		while (i < s->a->size)
+		{
+			if (s->a->array[0] > s->a->array[1] && i < (s->a->size - 1))
+			{
+				sa(s);
+			}
+			if (i == 0 && is_sorted(s->a))
+				break;
+			ra(s);
+			i++;
+		}
 	}
-	array->array[0] = tmp;
-}
-
-void	rra(t_stack_list *s)
-{
-	ft_putendl_fd("rra", 1);
-	rotate_rev(s->a);
-}
-
-void	rrb(t_stack_list *s)
-{
-	ft_putendl_fd("rrb", 1);
-	rotate_rev(s->a);
-}
-
-void	rrr(t_stack_list *s)
-{
-	ft_putendl_fd("rrr", 1);
-	rotate_rev(s->a);
-	rotate_rev(s->b);
 }

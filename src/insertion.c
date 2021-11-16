@@ -1,25 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   isertion.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 09:11:05 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/16 17:44:19 by ycornamu         ###   ########.fr       */
+/*   Created: 2021/11/16 16:21:12 by ycornamu          #+#    #+#             */
+/*   Updated: 2021/11/16 21:02:10 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "stack.h"
+#include "push_swap.h"
+#include <stdio.h>
 
-# include "stack.h"
+void	insertion_sort(t_stack_list *s)
+{
+	int	pos;
+	int sorted_nb;
 
-void print_stack(t_stack *a);
-
-void	sort(t_stack_list *s);
-char	is_sorted(t_stack *a);
-void	bubble_sort(t_stack_list *s);
-void	insertion_sort(t_stack_list *s);
-
-#endif
+	pos = 0;
+	sorted_nb = 0;
+	while (pos < (s->a->size - 1))
+	{
+		while (s->a->array[0] > s->a->array[1] && pos >= 0)
+		{
+			sa(s);
+			if (pos > 0)
+			{
+				rra(s);
+				pos--;
+			}
+		}
+		sorted_nb++;
+		while (pos < sorted_nb)
+		{
+			ra(s);
+			pos++;
+		}
+	}
+	if (pos > 0)
+		ra(s);
+}
