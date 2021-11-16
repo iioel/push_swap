@@ -6,17 +6,18 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:46:20 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/16 20:24:56 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/16 21:19:32 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 #include "push_swap.h"
+void	insertion_sortinb(t_stack_list *s);
 
 void	sort(t_stack_list *s)
 {
 	//bubble_sort(s);
-	insertion_sort(s);
+	insertion_sortinb(s);
 }
 
 char	is_sorted(t_stack *a)

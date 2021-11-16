@@ -6,7 +6,7 @@
 /*   By: yoel <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:26:15 by yoel              #+#    #+#             */
-/*   Updated: 2021/11/16 14:43:04 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/16 22:15:04 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_stack_list *init_stack(char *str[], int size)
 	s->a->array = ft_calloc(size, sizeof(int));
 	s->b->array = ft_calloc(size, sizeof(int));
 	s->a->size = size;
-	s->b->size = size;
+	s->b->size = 0;
 	str2array(s->a->array, str, size);
 	return (s);
 }
