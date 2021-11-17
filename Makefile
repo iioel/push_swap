@@ -6,7 +6,7 @@
 #    By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 20:26:16 by ycornamu          #+#    #+#              #
-#    Updated: 2021/11/16 16:52:42 by ycornamu         ###   ########.fr        #
+#    Updated: 2021/11/17 16:41:40 by ycornamu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,10 @@ NAME = push_swap
 
 SRCS = push_swap.c \
 	   sort.c \
+	   utils.c \
 	   bubble.c \
 	   insertion.c \
+	   separate.c \
 	   stack/stack.c \
 	   stack/swap.c \
 	   stack/push.c \

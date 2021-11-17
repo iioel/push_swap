@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 09:58:30 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/16 14:36:00 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/17 14:37:14 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	rra(t_stack_list *s)
 void	rrb(t_stack_list *s)
 {
 	ft_putendl_fd("rrb", 1);
-	rotate_rev(s->a);
+	rotate_rev(s->b);
 }
 
 void	rrr(t_stack_list *s)
