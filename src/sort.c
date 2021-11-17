@@ -6,15 +6,12 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:46:20 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/17 17:38:10 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/17 19:03:39 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 #include "push_swap.h"
-
-void	insertion_sortinb(t_stack_list *s);
-void	separate(t_stack_list *s, int n);
 
 char	is_sorted(t_stack *a)
 {
@@ -78,7 +75,7 @@ void	sort_5(t_stack_list *s)
 		pb(s);
 	}
 	sort_3(s);
-	insertion_sortinb(s);
+	insertion_sort(s);
 	movea(s, 2);
 }
 
@@ -98,7 +95,7 @@ void	sort(t_stack_list *s)
 				separate(s, 5);
 			else
 				separate(s, 12);
-			insertion_sortinb(s);
+			insertion_sort(s);
 		}
 	}
 }

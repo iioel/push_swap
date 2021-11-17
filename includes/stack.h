@@ -6,7 +6,7 @@
 /*   By: yoel <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:44:33 by yoel              #+#    #+#             */
-/*   Updated: 2021/11/16 14:39:56 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/17 18:12:52 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,26 @@ typedef struct s_stack_list
 }				t_stack_list;
 
 // stack.c
-t_stack_list *init_stack(char *str[], int size);
+void			clean_stack(t_stack_list *s);
+t_stack_list	*init_stack(char *str[], int size);
 
 // swap.c
-void	sa(t_stack_list *s);
-void	sb(t_stack_list *s);
-void	ss(t_stack_list *s);
+void			sa(t_stack_list *s);
+void			sb(t_stack_list *s);
+void			ss(t_stack_list *s);
 
 // push.c
-void pa(t_stack_list *s);
-void pb(t_stack_list *s);
+void			pa(t_stack_list *s);
+void			pb(t_stack_list *s);
 
 // rotate.c
-void	ra(t_stack_list *s);
-void	rb(t_stack_list *s);
-void	rr(t_stack_list *s);
+void			ra(t_stack_list *s);
+void			rb(t_stack_list *s);
+void			rr(t_stack_list *s);
 
 // rotate_rev.c
-void	rra(t_stack_list *s);
-void	rrb(t_stack_list *s);
-void	rrr(t_stack_list *s);
+void			rra(t_stack_list *s);
+void			rrb(t_stack_list *s);
+void			rrr(t_stack_list *s);
 
 #endif

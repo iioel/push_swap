@@ -6,17 +6,17 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 20:20:52 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/10/14 20:21:04 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/17 18:57:00 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	size_t	i;
-	int		factor;
-	int		res;
+	long	factor;
+	long	res;
 
 	i = 0;
 	factor = 1;

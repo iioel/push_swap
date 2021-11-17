@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:50:02 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/11 13:34:19 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/17 18:57:18 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *str, const char *tofind, size_t len);
 
 // ft_atoi.c
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 
 // ft_strdup.c
 char	*ft_strdup(const char *s1);
