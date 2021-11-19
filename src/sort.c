@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:46:20 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/17 19:03:39 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/19 23:13:00 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,6 @@ void	sort_3(t_stack_list *s)
 	}
 }
 
-int	abs(int i)
-{
-	if (i < 0)
-		return (-i);
-	else
-		return (i);
-}
-
 void	sort_5(t_stack_list *s)
 {
 	int	pos;
@@ -76,7 +68,8 @@ void	sort_5(t_stack_list *s)
 	}
 	sort_3(s);
 	insertion_sort(s);
-	movea(s, 2);
+	if (s->b->array[0] > s->a->array[0])
+		movea(s, 2);
 }
 
 void	sort(t_stack_list *s)

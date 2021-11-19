@@ -6,7 +6,7 @@
 #    By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 20:26:16 by ycornamu          #+#    #+#              #
-#    Updated: 2021/11/17 19:01:44 by ycornamu         ###   ########.fr        #
+#    Updated: 2021/11/19 22:17:38 by ycornamu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ SRCS = push_swap.c \
 	   utils.c \
 	   insertion.c \
 	   separate.c \
+	   get_minmax.c \
+	   get_nextminmax.c \
 	   stack/stack.c \
 	   stack/swap.c \
 	   stack/push.c \
