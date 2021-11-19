@@ -6,7 +6,7 @@
 /*   By: yoel <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 02:09:04 by yoel              #+#    #+#             */
-/*   Updated: 2021/11/17 19:01:34 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/20 00:25:10 by yoel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ int	main(int ac, char **av)
 		if (! stack)
 			exit(error());
 		sort(stack);
+		clean_stack(stack);
 	}
 }
