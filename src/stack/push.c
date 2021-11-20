@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 09:32:27 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/16 22:16:23 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/20 15:48:44 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ void	pa(t_stack_list *s)
 			i++;
 		}
 		s->b->size--;
-		ft_putendl_fd("pa", 1);
+		if (! s->cpy)
+			ft_putendl_fd("pa", 1);
+		s->moves++;
 	}
 }
 
@@ -54,6 +56,8 @@ void	pb(t_stack_list *s)
 			i++;
 		}
 		s->a->size--;
-		ft_putendl_fd("pb", 1);
+		if (! s->cpy)
+			ft_putendl_fd("pb", 1);
+		s->moves++;
 	}
 }

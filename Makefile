@@ -6,7 +6,7 @@
 #    By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 20:26:16 by ycornamu          #+#    #+#              #
-#    Updated: 2021/11/20 00:26:27 by yoel             ###   ########.fr        #
+#    Updated: 2021/11/20 16:11:07 by ycornamu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ LIBFT = libft.a
 LIBFT_DIR = libft
 
 CC = clang
-CFLAGS = -Wall -Werror -Wextra  -I $(LIBFT_DIR) -I $(HEADERS)
+CFLAGS = -g -Wall -Werror -Wextra  -I $(LIBFT_DIR) -I $(HEADERS)
 
 all: $(NAME)
 

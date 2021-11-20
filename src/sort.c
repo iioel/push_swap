@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:46:20 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/19 23:13:00 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/20 18:30:58 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,13 @@ void	sort_5(t_stack_list *s)
 
 void	sort(t_stack_list *s)
 {
+	int				i;
+	int				nb;
+	int				min_moves;
+	t_stack_list	*scpy;
+
+	i = 1;
+	min_moves = 0;
 	if (! is_sorted(s->a))
 	{
 		if (s->a->size == 2)
@@ -84,10 +91,19 @@ void	sort(t_stack_list *s)
 			sort_5(s);
 		else
 		{
-			if (s->a->size < 150)
-				separate(s, 5);
-			else
-				separate(s, 12);
+			while (i <= 25)
+			{
+				scpy = copy_stack(s);
+				separate(scpy, i);
+				insertion_sort(scpy);
+				if (scpy->moves < min_moves || ! min_moves)
+					nb = i;
+				if (scpy->moves < min_moves || ! min_moves)
+					min_moves = scpy->moves;
+				clean_stack(scpy);
+				i++;
+			}
+			separate(s, nb);
 			insertion_sort(s);
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 13:36:02 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/19 23:17:46 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/20 18:32:01 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,13 @@ int	get_separator_max(t_stack *a, int n)
 
 void	push_seps(t_stack_list *s, int size)
 {
-	static int	sep_min;
-	static int	sep_max;
-	static int	min_count = INT_MAX;
-	static int	max_count = INT_MAX;
+	int	sep_min;
+	int	sep_max;
+	int	min_count;
+	int	max_count;
 
+	min_count = INT_MAX;
+	max_count = INT_MAX;
 	while (s->a->size)
 	{
 		if (! (min_count < size))
@@ -84,15 +86,14 @@ void	push_seps(t_stack_list *s, int size)
 			min_count++;
 		else if (s->a->array[0] > sep_max)
 			max_count++;
-		if (s->a->array[0] <= sep_min)
-			pb(s);
-		else if (s->a->array[0] > sep_max)
+		if (s->a->array[0] <= sep_min || s->a->array[0] > sep_max)
 		{
 			pb(s);
-			rb(s);
+			if (s->b->array[0] > sep_max && ! (s->a->array[0] > sep_max) && ! (s->a->array[0] <= sep_min))
+				rr(s);
+			else if (s->b->array[0] > sep_max)
+				rb(s);
 		}
-	//	else if (s->b->array[0] > sep_min)
-	//		rr(s);
 		else
 			ra(s);
 	}

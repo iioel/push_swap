@@ -6,7 +6,7 @@
 /*   By: yoel <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:44:33 by yoel              #+#    #+#             */
-/*   Updated: 2021/11/17 18:12:52 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/20 15:51:36 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ typedef struct s_stack_list
 {
 	t_stack	*a;
 	t_stack	*b;
+	int		moves;
+	int		cpy;
 }				t_stack_list;
 
 // stack.c
 void			clean_stack(t_stack_list *s);
 t_stack_list	*init_stack(char *str[], int size);
+t_stack_list	*copy_stack(t_stack_list *s);
 
 // swap.c
 void			sa(t_stack_list *s);

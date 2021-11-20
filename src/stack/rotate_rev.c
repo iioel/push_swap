@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 09:58:30 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/17 14:37:14 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/11/20 15:50:29 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,25 @@ static void	rotate_rev(t_stack *array)
 
 void	rra(t_stack_list *s)
 {
-	ft_putendl_fd("rra", 1);
+	if (! s->cpy)
+		ft_putendl_fd("rra", 1);
 	rotate_rev(s->a);
+	s->moves++;
 }
 
 void	rrb(t_stack_list *s)
 {
-	ft_putendl_fd("rrb", 1);
+	if (! s->cpy)
+		ft_putendl_fd("rrb", 1);
 	rotate_rev(s->b);
+	s->moves++;
 }
 
 void	rrr(t_stack_list *s)
 {
-	ft_putendl_fd("rrr", 1);
+	if (! s->cpy)
+		ft_putendl_fd("rrr", 1);
 	rotate_rev(s->a);
 	rotate_rev(s->b);
+	s->moves++;
 }
