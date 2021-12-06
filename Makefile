@@ -6,7 +6,7 @@
 #    By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 20:26:16 by ycornamu          #+#    #+#              #
-#    Updated: 2021/11/20 16:11:07 by ycornamu         ###   ########.fr        #
+#    Updated: 2021/12/06 15:50:57 by ycornamu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRCS = push_swap.c \
 	   stack/swap.c \
 	   stack/push.c \
 	   stack/rotate.c \
-	   stack/rotate_rev.c
+	   stack/rotate_rev.c \
+	   stack/utils.c
 
 SRCS_DIR = src
 
@@ -40,7 +41,7 @@ LIBFT = libft.a
 LIBFT_DIR = libft
 
 CC = clang
-CFLAGS = -g -Wall -Werror -Wextra  -I $(LIBFT_DIR) -I $(HEADERS)
+CFLAGS = -Wall -Werror -Wextra  -I $(LIBFT_DIR) -I $(HEADERS)
 
 all: $(NAME)
 

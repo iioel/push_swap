@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:46:20 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/11/20 18:30:58 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/12/06 13:02:48 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	sort_5(t_stack_list *s)
 		movea(s, 2);
 }
 
-void	sort(t_stack_list *s)
+static int	get_best_sep(t_stack_list *s)
 {
 	int				i;
 	int				nb;
@@ -81,6 +81,24 @@ void	sort(t_stack_list *s)
 
 	i = 1;
 	min_moves = 0;
+	while (i <= 25)
+	{
+		scpy = copy_stack(s);
+		separate(scpy, i);
+		insertion_sort(scpy);
+		if (scpy->moves < min_moves || ! min_moves)
+		{
+			nb = i;
+			min_moves = scpy->moves;
+		}
+		clean_stack(scpy);
+		i++;
+	}
+	return (nb);
+}
+
+void	sort(t_stack_list *s)
+{
 	if (! is_sorted(s->a))
 	{
 		if (s->a->size == 2)
@@ -91,19 +109,7 @@ void	sort(t_stack_list *s)
 			sort_5(s);
 		else
 		{
-			while (i <= 25)
-			{
-				scpy = copy_stack(s);
-				separate(scpy, i);
-				insertion_sort(scpy);
-				if (scpy->moves < min_moves || ! min_moves)
-					nb = i;
-				if (scpy->moves < min_moves || ! min_moves)
-					min_moves = scpy->moves;
-				clean_stack(scpy);
-				i++;
-			}
-			separate(s, nb);
+			separate(s, get_best_sep(s));
 			insertion_sort(s);
 		}
 	}
