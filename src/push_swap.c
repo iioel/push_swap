@@ -6,7 +6,7 @@
 /*   By: yoel <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 02:09:04 by yoel              #+#    #+#             */
-/*   Updated: 2021/12/06 15:25:34 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/12/07 17:10:39 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-
-void	print_stack(t_stack *a)
-{
-	int	i;
-
-	i = 0;
-	while (i < a->size)
-		printf("%i ", a->array[i++]);
-	printf("\n");
-}
 
 int	error(void)
 {
