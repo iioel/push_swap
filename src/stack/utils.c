@@ -6,7 +6,7 @@
 /*   By: ycornamu <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:54:02 by ycornamu          #+#    #+#             */
-/*   Updated: 2021/12/06 12:57:17 by ycornamu         ###   ########.fr       */
+/*   Updated: 2021/12/07 17:05:53 by ycornamu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	is_nbr(char *str)
 	if (str[0] == '-')
 		i = 1;
 	size = ft_strlen(str);
+	if (i == size)
+		return (0);
 	while (i < size)
 		if (! ft_isdigit(str[i++]))
 			return (0);
